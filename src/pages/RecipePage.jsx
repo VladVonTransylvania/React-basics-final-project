@@ -9,10 +9,14 @@ import {
 } from "@chakra-ui/react";
 import BackButton from '../components/ui/BackButton';
 
+// Component to display details of a selected recipe
 export const RecipePage = ({ recipe }) => {
+
+  // Display a message if no recipe is selected
   if (!recipe) return <Text>No recipe selected</Text>;
 
   return (
+    // Main container for the recipe page
     <Box
       maxWidth="700px"
       mx="auto"
@@ -21,7 +25,10 @@ export const RecipePage = ({ recipe }) => {
       pb="10"
       backgroundColor="rgba(255, 255, 255, 0.7)" // Semi-transparent white
     >
+      {/* Back button to navigate to the previous page */}
       <BackButton />
+
+      {/* Image of the recipe */}
       <Image
         src={recipe.image}
         alt={recipe.label}
@@ -29,17 +36,27 @@ export const RecipePage = ({ recipe }) => {
         height="300px"
         objectFit="cover"
       />
+      {/* Container for recipe content */}
       <VStack align="stretch" m="6" mb="1">
+        {/* Displaying meal type of the recipe */}
         <Text fontWeight="semibold" fontSize="sm" color="gray.600">
           {recipe.mealType.join(", ")}
         </Text>
+
+        {/* Grid layout for recipe details */}
         <SimpleGrid columns={2} spacing={10}>
+          {/* First column for main recipe details */}
           <Box>
+            {/* Recipe title */}
             <Heading size="md">{recipe.label}</Heading>
+
+            {/* Cooking time and servings */}
             <Text fontSize="md" mt="4">
               Total Cooking Time: {recipe.totalTime} minutes
             </Text>
             <Text fontSize="md">Servings: {recipe.yield}</Text>
+
+            {/* Ingredients heading and list */}
             <Heading size="sm" mt="3">
               Ingredients
             </Heading>
@@ -50,6 +67,7 @@ export const RecipePage = ({ recipe }) => {
             ))}
           </Box>
 
+          {/*Second column for additional details like health labels, diet labels, etc.*/}
           <Box align="start">
             <Heading size="sm">Health Labels</Heading>
             {recipe.healthLabels.map((label, index) => (
@@ -58,6 +76,7 @@ export const RecipePage = ({ recipe }) => {
               </Badge>
             ))}
 
+            {/* Conditional rendering for diet labels */}
             {recipe.dietLabels && recipe.dietLabels.length > 0 && (
               <>
                 <Heading size="sm" mt="4">
@@ -71,6 +90,7 @@ export const RecipePage = ({ recipe }) => {
               </>
             )}
 
+            {/* Conditional rendering for cautions */}
             {recipe.cautions && recipe.cautions.length > 0 && (
               <>
                 <Heading size="sm" mt="4">
@@ -82,7 +102,7 @@ export const RecipePage = ({ recipe }) => {
               </>
             )}
 
-            {/* Total Nutrients Section */}
+            {/* Conditionally rendering the Total Nutrients section if recipe data is available */}
             {recipe.totalNutrients && (
               <Box mt="4">
                 <Heading size="sm">Total Nutrients</Heading>
@@ -95,13 +115,16 @@ export const RecipePage = ({ recipe }) => {
                   p={3}
                   alignItems="start"
                 >
-                  {/* Nutrient values displayed in a grid */}
+                  {/* Each VStack represents a column for a specific nutrient */}
+                  {/* CALORIES */}
                   <VStack spacing={0.5}>
                     <Text fontSize="xs">
                       {Math.round(recipe.totalNutrients.ENERC_KCAL?.quantity)}
                     </Text>
                     <Text fontSize="xs">CALORIES</Text>
                   </VStack>
+
+                  {/* CARBS */}
                   <VStack spacing={0.5}>
                     <Text fontSize="xs">
                       {Math.round(recipe.totalNutrients.CHOCDF?.quantity)}{" "}
@@ -109,6 +132,8 @@ export const RecipePage = ({ recipe }) => {
                     </Text>
                     <Text fontSize="xs">CARBS</Text>
                   </VStack>
+
+                  {/* PROTEIN */}
                   <VStack spacing={0.5}>
                     <Text fontSize="xs">
                       {Math.round(recipe.totalNutrients.PROCNT?.quantity)}{" "}
@@ -116,6 +141,8 @@ export const RecipePage = ({ recipe }) => {
                     </Text>
                     <Text fontSize="xs">PROTEIN</Text>
                   </VStack>
+
+                  {/* FAT */}
                   <VStack spacing={0.5}>
                     <Text fontSize="xs">
                       {Math.round(recipe.totalNutrients.FAT?.quantity)}{" "}
@@ -123,6 +150,8 @@ export const RecipePage = ({ recipe }) => {
                     </Text>
                     <Text fontSize="xs">FAT</Text>
                   </VStack>
+
+                  {/* CHOLESTEROL */}
                   <VStack spacing={0.5}>
                     <Text fontSize="xs">
                       {Math.round(recipe.totalNutrients.CHOLE?.quantity)}{" "}
@@ -130,6 +159,8 @@ export const RecipePage = ({ recipe }) => {
                     </Text>
                     <Text fontSize="xs">CHOLESTEROL</Text>
                   </VStack>
+
+                  {/* SODIUM */}
                   <VStack spacing={0.5} pl={4}>
                     <Text fontSize="xs">
                       {Math.round(recipe.totalNutrients.NA?.quantity)}{" "}
