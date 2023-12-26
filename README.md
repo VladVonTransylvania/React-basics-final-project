@@ -25,15 +25,15 @@ On the recipe overview page, there is a list of all recipes.
 
     f.Dish type
 
-  2.Each item on the list also shows the following health labels (change these if you want), if these are applicable: 
+  2.Each item on the list also shows the following health labels: 
 
     a.Vegetarian
 
     b.Vegan
 
-    3.Users can search recipes based on recipe name.
+  3.Users can search recipes based on recipe name.
 
-    4.Users can click on a recipe and go to a different screen that shows all the details of the recipe.
+  4.Users can click on a recipe and go to a different screen that shows all the details of the recipe.
 
 
 
