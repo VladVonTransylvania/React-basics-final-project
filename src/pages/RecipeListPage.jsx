@@ -49,14 +49,14 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
   return (
     // Main container for the recipe list page with styling
     <Box
-      backgroundColor="#00bfff"
+      backgroundColor="#87CEEB"
       minHeight="100vh"
       px={{ sm: "2", md: "6", lg: "12" }} // Sets responsive horizontal padding
       pb="6"
     >
       {/* Center component to align and organize children elements */}
       <Center flexDir="column" pt="10">
-        <Heading mb="6" color="white">
+        <Heading mb="6" color="black">
           Winky Recipes
         </Heading>
 
@@ -68,6 +68,10 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
           w="full"
           maxWidth="400px"
           backgroundColor="white"
+          style={{
+            boxShadow: "0 0 10px 2px rgba(300, 300, 300, 0.9)", // Futuristic shadow
+            transition: "0.2s",
+          }}
         />
 
         {/* Group of buttons for diet-based recipe filtering */}
@@ -77,9 +81,11 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
             onClick={() => handleDietFilterChange("")}
             isActive={dietFilter === ""}
             colorScheme="blue"
+            boxShadow="0 0 10px 2px rgba(300, 300, 300, 0.9)"
+            transition="0.2s"
             _hover={{
-              transform: "scale(1.03)",
-              boxShadow: "xl",
+              transform: "scale(1.09)",
+              boxShadow: "0 0 8px 4px rgba(300, 300, 300, 3.0)",
             }}
           >
             All
@@ -90,9 +96,11 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
             onClick={() => handleDietFilterChange("Vegan")}
             isActive={dietFilter === "Vegan"}
             colorScheme="blue"
+            boxShadow="0 0 10px 2px rgba(300, 300, 255, 0.9)"
+            transition="0.2s"
             _hover={{
-              transform: "scale(1.03)",
-              boxShadow: "xl",
+              transform: "scale(1.09)",
+              boxShadow: "0 0 8px 4px rgba(300, 300, 300, 3.0)",
             }}
           >
             Vegan
@@ -103,9 +111,11 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
             onClick={() => handleDietFilterChange("Vegetarian")}
             isActive={dietFilter === "Vegetarian"}
             colorScheme="blue"
+            boxShadow="0 0 10px 2px rgba(300, 300, 255, 0.9)"
+            transition="0.2s"
             _hover={{
-              transform: "scale(1.03)",
-              boxShadow: "xl",
+              transform: "scale(1.09)",
+              boxShadow: "0 0 8px 4px rgba(300, 300, 300, 3.0)",
             }}
           >
             Vegetarian
@@ -114,7 +124,6 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
 
         {/* SimpleGrid to display recipe cards in a responsive grid layout */}
         <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} spacing="10">
-          
           {/* Mapping through filtered recipes and rendering RecipeCard components */}
           {filteredRecipes.map((hit, index) => (
             <RecipeCard

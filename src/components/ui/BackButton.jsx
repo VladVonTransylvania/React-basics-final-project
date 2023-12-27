@@ -11,7 +11,7 @@ const BackButton = () => {
       borderLeftRadius={0}
       backgroundColor="rgba(255, 255, 255, 0.4)"
       _hover={{
-        bg: "#00bfff",
+        bg: "#87CEEB",
         transform: "scale(1.05)", // Slightly enlarge the button
         boxShadow: "md", // Add shadow for depth
       }}

@@ -4,6 +4,7 @@ import { RecipeListPage } from "./pages/RecipeListPage";
 import { RecipePage } from "./pages/RecipePage"; 
 import { Box } from "@chakra-ui/react";
 
+
 // Main App component
 export const App = () => {
   // State to keep track of the selected recipe
@@ -13,7 +14,7 @@ export const App = () => {
     // Using React Router for routing
     <Router>
       {/* Box component from Chakra UI for styling */}
-      <Box backgroundColor="#00bfff" minHeight="100vh">
+      <Box backgroundColor="#87CEEB" minHeight="100vh">
         {/* Defining Routes */}
         <Routes>
           {/* Route for the home page that lists all recipes */}
