@@ -69,7 +69,7 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
           maxWidth="400px"
           backgroundColor="white"
           style={{
-            boxShadow: "0 0 10px 2px rgba(300, 300, 300, 0.9)", // Futuristic shadow
+            boxShadow: "0 0 10px 2px rgba(300, 300, 300, 0.7)", // Futuristic shadow
             transition: "0.2s",
           }}
         />
@@ -81,7 +81,7 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
             onClick={() => handleDietFilterChange("")}
             isActive={dietFilter === ""}
             colorScheme="blue"
-            boxShadow="0 0 10px 2px rgba(300, 300, 300, 0.9)"
+            boxShadow="0 0 10px 2px rgba(300, 300, 300, 0.7)"
             transition="0.2s"
             _hover={{
               transform: "scale(1.09)",
@@ -96,7 +96,7 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
             onClick={() => handleDietFilterChange("Vegan")}
             isActive={dietFilter === "Vegan"}
             colorScheme="blue"
-            boxShadow="0 0 10px 2px rgba(300, 300, 255, 0.9)"
+            boxShadow="0 0 10px 2px rgba(300, 300, 255, 0.7)"
             transition="0.2s"
             _hover={{
               transform: "scale(1.09)",
@@ -111,7 +111,7 @@ export const RecipeListPage = ({ onRecipeSelect }) => {
             onClick={() => handleDietFilterChange("Vegetarian")}
             isActive={dietFilter === "Vegetarian"}
             colorScheme="blue"
-            boxShadow="0 0 10px 2px rgba(300, 300, 255, 0.9)"
+            boxShadow="0 0 10px 2px rgba(300, 300, 255, 0.7)"
             transition="0.2s"
             _hover={{
               transform: "scale(1.09)",
